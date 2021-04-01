@@ -17,6 +17,7 @@ import java.awt.Font;
 import javax.swing.JScrollPane;
 import javax.swing.border.LineBorder;
 import javax.swing.JTable;
+import javax.swing.JButton;
 
 public class TelaTarefasEmAndamento extends JFrame {
 
@@ -60,6 +61,8 @@ public class TelaTarefasEmAndamento extends JFrame {
 				FormSpecs.DEFAULT_ROWSPEC,
 				RowSpec.decode("15dlu"),
 				RowSpec.decode("default:grow"),
+				RowSpec.decode("10dlu"),
+				FormSpecs.DEFAULT_ROWSPEC,
 				RowSpec.decode("15dlu"),}));
 		
 		JLabel lblTarefasEmAndamento = new JLabel("Tarefas em Andamento");
@@ -72,8 +75,15 @@ public class TelaTarefasEmAndamento extends JFrame {
 		panelTarefasEmAndamento.add(scrollTarefasEmAndamento, "2, 4, fill, fill");
 		
 		tableTarefasEmAndamento = new JTable();
+		tableTarefasEmAndamento.setCellSelectionEnabled(true);
 		tableTarefasEmAndamento.setBackground(new Color(102, 205, 170));
 		scrollTarefasEmAndamento.setViewportView(tableTarefasEmAndamento);
+		
+		JButton btnNewButton = new JButton("Concluir Tarefa");
+		btnNewButton.setForeground(new Color(32, 178, 170));
+		btnNewButton.setFont(new Font("Monospaced", Font.BOLD, 14));
+		btnNewButton.setBackground(new Color(255, 255, 255));
+		panelTarefasEmAndamento.add(btnNewButton, "2, 6, right, default");
 	}
 
 }

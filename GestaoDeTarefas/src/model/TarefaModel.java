@@ -1,13 +1,17 @@
 package model;
 
-import java.util.Calendar;
+
+import java.time.LocalDate;
 
 public class TarefaModel {
 	
 	private int idTarefa;
 	private String tituloTarefa;
 	private String descricaoTarefa;
-	private Calendar dataPrevistaConclusao;
+	private LocalDate dataPrevistaConclusao;
+	private String situacaoTarefa;
+	private String prazoTarefa;
+	
 	public int getIdTarefa() {
 		return idTarefa;
 	}
@@ -26,16 +30,49 @@ public class TarefaModel {
 	public void setDescricaoTarefa(String descricaoTarefa) {
 		this.descricaoTarefa = descricaoTarefa;
 	}
-	public Calendar getDataPrevistaConclusao() {
+	public LocalDate getDataPrevistaConclusao() {
 		return dataPrevistaConclusao;
 	}
-	public void setDataPrevistaConclusao(Calendar dataPrevistaConclusao) {
+	public void setDataPrevistaConclusao(LocalDate dataPrevista) {
+		this.dataPrevistaConclusao = dataPrevista;
+	}
+	
+	public String getSituacaoTarefa() {
+		return situacaoTarefa;
+	}
+	public void setSituacaoTarefa(String situacaoTarefa) {
+		this.situacaoTarefa = situacaoTarefa;
+	}
+	public String getPrazoTarefa() {
+		return prazoTarefa;
+	}
+	public void setPrazoTarefa(String prazoTarefa) {
+		this.prazoTarefa = prazoTarefa;
+	}
+	
+	
+	public TarefaModel(int idTarefa, String tituloTarefa, String descricaoTarefa, LocalDate dataPrevistaConclusao,
+			String situacaoTarefa, String prazoTarefa) {
+		this.idTarefa = idTarefa;
+		this.tituloTarefa = tituloTarefa;
+		this.descricaoTarefa = descricaoTarefa;
 		this.dataPrevistaConclusao = dataPrevistaConclusao;
+		this.situacaoTarefa = situacaoTarefa;
+		this.prazoTarefa = prazoTarefa;
 	}
 	
 	public TarefaModel() {
 		
 	}
 
+	public TarefaModel(int idTarefa, String tituloTarefa, String descricaoTarefa, LocalDate dataPrevistaConclusao,
+			String situacaoTarefa) {
+		this.idTarefa = idTarefa;
+		this.tituloTarefa = tituloTarefa;
+		this.descricaoTarefa = descricaoTarefa;
+		this.dataPrevistaConclusao = dataPrevistaConclusao;
+		this.situacaoTarefa = situacaoTarefa;
+	}
+	
 
 }
