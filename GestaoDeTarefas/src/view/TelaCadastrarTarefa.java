@@ -12,13 +12,9 @@ import javax.swing.text.MaskFormatter;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Date;
 import java.sql.SQLException;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.LocalTime;
-import java.util.Calendar;
 import java.awt.Color;
 import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.ColumnSpec;
@@ -172,7 +168,7 @@ public class TelaCadastrarTarefa extends JFrame {
 		
 		JButton btnCadastrarTarefa = new JButton("Inserir Tarefa");
 		btnCadastrarTarefa.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {;
+			public void actionPerformed(ActionEvent e) {
 				java.sql.Date dataConvertida = java.sql.Date.valueOf(tfDataConclusao.getText());
 				LocalDate converterJavaLocalDate = dataConvertida.toLocalDate();
 				TarefasController controller = new TarefasController();

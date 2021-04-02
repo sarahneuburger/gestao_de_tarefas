@@ -11,6 +11,9 @@ import java.awt.Toolkit;
 import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.RowSpec;
+
+import controller.TarefasController;
+
 import com.jgoodies.forms.layout.FormSpecs;
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -71,8 +74,11 @@ public class TelaTarefasConcluidas extends JFrame {
 		scrollTarefasConcluidas.setViewportBorder(new LineBorder(new Color(0, 153, 153)));
 		panelTarefasConcluidas.add(scrollTarefasConcluidas, "2, 4, fill, fill");
 		
+		// Tabela apresenta os dados cadastrados no banco cujo a situação seja "Em andamento"
 		tableTarefasConcluidas = new JTable();
-		tableTarefasConcluidas.setBackground(new Color(102, 205, 170));
+		TarefasController controller = new TarefasController();
+		tableTarefasConcluidas.setModel(controller.consultarTarefa("Concluída"));
+		tableTarefasConcluidas.setBackground(new Color(224, 255, 255));
 		scrollTarefasConcluidas.setViewportView(tableTarefasConcluidas);
 	}
 

@@ -5,6 +5,8 @@ import java.sql.SQLException;
 import java.text.ParseException;
 import java.time.LocalDate;
 
+import javax.swing.table.TableModel;
+
 import model.TarefaModel;
 import model.TarefasDAO;
 
@@ -18,7 +20,17 @@ public class TarefasController {
 		tarefaModel.setDescricaoTarefa(descricaoTarefa);
 		tarefaModel.setDataPrevistaConclusao(dataPrevista);
 		tarefaModel.setSituacaoTarefa(situacaoTarefa);
-		new TarefasDAO().cadastrarTarefa(tarefaModel);;
+		new TarefasDAO().cadastrarTarefa(tarefaModel);
 	}
 
+	
+	// Método para cadastrar tarefa
+	public TableModel consultarTarefa(String situacaoTarefa) {
+		return new TarefasDAO().consultarTarefas(situacaoTarefa);		
+	}
+	
+	// Método para alterar a situação da tarefa
+	public void alterarSituacao(int idTarefa) {
+		new TarefasDAO().alterarSituacao(idTarefa);
+	}
 }
